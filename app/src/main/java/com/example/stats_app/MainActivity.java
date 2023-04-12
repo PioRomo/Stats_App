@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         TextView output = findViewById(R.id.output);
         battingAverage_calc(v, output);
         onBasePercentage_calc(v, output);
+        sluggingPercentage(v,output);
     }
 
     public void battingAverage_calc(View v, TextView output){
@@ -40,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
     public void onBasePercentage_calc(View v, TextView output){
         TextView atBats = findViewById(R.id.inputAtBats);
         TextView hits = findViewById(R.id.inputHits);
-        TextView walks = findViewById(R.id.Walks);
-        TextView hbp = findViewById(R.id.HBP);
+        TextView walks = findViewById(R.id.inputWalks);
+        TextView hbp = findViewById(R.id.inputHBP);
 
         try{
             double input_atBats = Integer.parseInt(atBats.getText().toString());
@@ -53,6 +54,28 @@ public class MainActivity extends AppCompatActivity {
             output.append("OBP: " + df.format(onBasePercentage) + "\n");
         }catch(NumberFormatException nfe){
             output.setText("Error calculating OBP. Make sure values are valid." + "\n");
+        }
+    }
+
+    public void sluggingPercentage(View v, TextView output){
+        TextView singles = findViewById(R.id.inputSingles);
+        TextView doubles = findViewById(R.id.inputDoubles);
+        TextView triples = findViewById(R.id.inputTriples);
+        TextView hrs = findViewById(R.id.inputHRS);
+        TextView abs = findViewById(R.id.inputAtBats);
+
+        try{
+            double input_singles= Integer.parseInt(singles.getText().toString());
+            double input_doubles = Integer.parseInt(doubles.getText().toString());
+            double input_triples = Integer.parseInt(triples.getText().toString());
+            double input_hrs = Integer.parseInt(hrs.getText().toString());
+            double input_abs = Integer.parseInt(abs.getText().toString());
+            double sluggingPercentage = (input_singles + (2*input_doubles) + (3*input_triples)+(4*input_hrs))/input_abs;
+            DecimalFormat df = new DecimalFormat("#.###");
+            output.append("SLG: " + df.format(sluggingPercentage) + "\n");
+        }
+        catch(NumberFormatException nfe){
+            output.append("Error calculating SLG. Make sure values are valid." + "\n");
         }
     }
 }

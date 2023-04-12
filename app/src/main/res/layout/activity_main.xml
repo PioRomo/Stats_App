@@ -8,33 +8,24 @@
     android:background="@color/dark_gray"
     >
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="262dp"
-        android:layout_height="48dp"
-        android:text="Batting"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/inputHits"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.107"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/inputAtBats"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
+        android:backgroundTint="#FFFFFF"
         android:ems="10"
+        android:fontFamily="casual"
+        android:hint="At-Bats"
         android:inputType="number"
-        android:text="At-Bats"
         android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.241" />
-
+        app:layout_constraintVertical_bias="0.184" />
 
     <Button
         android:id="@+id/button"
@@ -46,65 +37,143 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputAtBats"
-        app:layout_constraintVertical_bias="0.84" />
+        app:layout_constraintVertical_bias="0.658" />
 
     <EditText
         android:id="@+id/inputHits"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
+        android:backgroundTint="#FFFFFF"
         android:ems="10"
+        android:fontFamily="casual"
+        android:hint="Hits"
         android:inputType="number"
-        android:text="Hits"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/inputAtBats"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.859" />
+        app:layout_constraintVertical_bias="0.114" />
 
     <TextView
         android:id="@+id/output"
-        android:layout_width="262dp"
-        android:layout_height="38dp"
+        android:layout_width="256dp"
+        android:layout_height="112dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:text=""
         android:textColor="@color/white"
-        android:layout_centerHorizontal = "true"
-        android:layout_centerVertical = "true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.292" />
+        app:layout_constraintVertical_bias="0.564" />
 
     <EditText
-        android:id="@+id/Walks"
+        android:id="@+id/inputWalks"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
+        android:backgroundTint="#FFFFFF"
         android:ems="10"
+        android:fontFamily="casual"
+        android:hint="Walks"
         android:inputType="number"
-        android:text="Walks"
         android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputAtBats"
-        app:layout_constraintVertical_bias="0.046" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/HBP"
+        android:id="@+id/inputHBP"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
+        android:backgroundTint="#FFFFFF"
         android:ems="10"
+        android:fontFamily="casual"
+        android:hint="HBP"
         android:inputType="number"
-        android:text="HBP"
-        android:textColor = "@color/white"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Walks"
-        app:layout_constraintVertical_bias="0.054" />
+        app:layout_constraintTop_toBottomOf="@+id/inputWalks"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/inputSingles"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:fontFamily="casual"
+        android:hint="Singles"
+        android:inputType="number"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.395" />
+
+    <EditText
+        android:id="@+id/inputDoubles"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:fontFamily="casual"
+        android:hint="Doubles"
+        android:inputType="number"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.465" />
+
+    <EditText
+        android:id="@+id/inputTriples"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:fontFamily="casual"
+        android:hint="Triples"
+        android:inputType="number"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.535" />
+
+    <EditText
+        android:id="@+id/inputHRS"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:fontFamily="casual"
+        android:hint="HRS"
+        android:inputType="number"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.606" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

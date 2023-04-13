@@ -1,6 +1,8 @@
 package com.example.stats_app;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.graphics.Color;
 import android.view.View;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         onBasePercentage_calc(v, output);
         sluggingPercentage(v,output);
         onBasePlusSlugging(v,output);
+        atBatsPerHomeRun(v, output);
 
     }
 
@@ -32,9 +35,12 @@ public class MainActivity extends AppCompatActivity {
             double input_hits = Integer.parseInt(hits.getText().toString());
             double battingAverage = input_hits / input_atBats;
             DecimalFormat df = new DecimalFormat("#.###");
+
             output.setText("BA: " + df.format(battingAverage) + "\n");
         }catch(NumberFormatException nfe){
+
             output.setText("Error calculating BA. Make sure values are valid." + "\n");
+
         }
 
 
@@ -55,8 +61,10 @@ public class MainActivity extends AppCompatActivity {
             double input_sacFlies = Integer.parseInt(sacFlies.getText().toString());
             double onBasePercentage = (input_hits + input_walks + input_hbp) / (input_atBats + input_walks + input_hbp + input_sacFlies);
             DecimalFormat df = new DecimalFormat("#.###");
+
             output.append("OBP: " + df.format(onBasePercentage) + "\n");
         }catch(NumberFormatException nfe){
+
             output.setText("Error calculating OBP. Make sure values are valid." + "\n");
         }
     }
@@ -76,9 +84,11 @@ public class MainActivity extends AppCompatActivity {
             double input_abs = Integer.parseInt(abs.getText().toString());
             double sluggingPercentage = (input_singles + (2*input_doubles) + (3*input_triples)+(4*input_hrs))/input_abs;
             DecimalFormat df = new DecimalFormat("#.###");
+
             output.append("SLG: " + df.format(sluggingPercentage) + "\n");
         }
         catch(NumberFormatException nfe){
+
             output.append("Error calculating SLG. Make sure values are valid." + "\n");
         }
     }
@@ -111,11 +121,29 @@ public class MainActivity extends AppCompatActivity {
 
             double onBasePlusSluggingPercentage = onBasePercentage + sluggingPercentage;
             DecimalFormat df = new DecimalFormat("#.###");
+
             output.append("OPS: " + df.format(onBasePlusSluggingPercentage)+ "\n");
         }
         catch(NumberFormatException nfe){
+
             output.append("Error calculating OPS. Make sure values are valid." + "\n");
         }
+    }
+
+    public void atBatsPerHomeRun(View v, TextView output){
+        TextView abs = findViewById(R.id.inputAtBats);
+        TextView hrs = findViewById(R.id.inputHRS);
+
+        try{
+            double input_abs = Integer.parseInt(abs.getText().toString());
+            double input_hrs = Integer.parseInt(hrs.getText().toString());
+            double abs_hrs = input_abs / input_hrs;
+            DecimalFormat df = new DecimalFormat("#.###");
+            output.append("ABS/HR : " + df.format(abs_hrs));
+        }catch(NumberFormatException nfe){
+            output.append("Error calculating ABS/HR. Make sure all values are valid. ");
+        }
+
     }
 
 
